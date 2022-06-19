@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+}
+main .container-cep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+main .container-cep.disabled {
+  display: none;
+}
+main .container-cep label {
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+}
+main .container-cep label span {
+  color: #FD7F00;
+}
+main .container-cep input {
+  padding: 0.5rem 7rem 0.5rem 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #8d8d8d;
+}
+main .container-cep input:focus {
+  outline: 0;
+}
+main .container-cep button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0.4rem 2rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  background-color: #FD7F00;
+}
+main .container-cep button:active {
+  box-shadow: none;
+}
+main .loading-cep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: none;
+}
+main .loading-cep p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+main .loading-cep.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  border-radius: 5px;
+  background-color: #cacaca;
+  padding: 1rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.493);
+  display: none;
+}
+main section.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+main section .info-cep {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+main section .info-cep p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+main section .info-cep p span {
+  font-weight: 600;
+}
+main section button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0.4rem 2rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  background-color: #FD7F00;
+}
+main section button:active {
+  box-shadow: none;
+}
+main section .error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main section .error-message p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

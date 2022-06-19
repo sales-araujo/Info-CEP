@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Melhor plataforma para consulta de sua localidade" />
+    <meta name="author" content="Sales Araujo" />
+    <meta name="location" content="Brasil, PE" />
+    <title>Consulta CEP</title>
+    <link rel="stylesheet" href="/scss/style.css">
+  </head>
+  <body>
+    <main>
+      <form class="container-cep">
+        <label for="cepNumber">Info<span>CEP</span></label>
+        <input type="text" id="cepNumber" required placeholder="00000-000" maxlength="8" onkeypress="$(this).mask('00000-000')"/>
+        <button type="submit">consultar</button>
+      </form>
+
+      <div class="loading-cep">
+        <img src="/loading-cep.gif" alt="Carregando os dados do cep" />
+        <p>Aguarde um momento enquanto buscamos seus dados...</p>
+      </div>
+
+      <section id="modalInfoCep"></section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

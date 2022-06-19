@@ -1,0 +1,144 @@
+@use 'root';
+@use 'mixins';
+@use 'colors';
+@use 'fonts';
+
+main{
+  @include mixins.displayFlex(column, center, center);
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  
+  .container-cep{
+    @include mixins.displayFlex(column, center, center);
+    gap: 2rem;
+
+    &.disabled{
+      display: none;
+    }
+    
+    label{
+      color: colors.$text-black;
+      font-family: fonts.$font-Poppins;
+      font-weight: 500;
+      font-size: 60px;
+
+      span{
+        color: colors.$text-orange;
+      }
+    }
+
+    input{
+      padding: .5rem 7rem .5rem 1rem;
+      font-family: fonts.$font-Poppins;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 1px solid rgb(141, 141, 141);
+
+      &:focus{
+        outline: 0;
+      }
+    }
+
+    button{
+      font-family: fonts.$font-Poppins;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: .4rem 2rem;
+      border-radius: 5px;
+      border: none;
+      color: colors.$text-white;
+      font-weight: 500;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      background-color: colors.$background-orange;
+
+      &:active{
+        box-shadow: none;
+      }
+    }
+  }
+
+  .loading-cep{
+    @include mixins.displayFlex(column, center, center);
+    gap: 2rem;
+    display: none;
+    
+    p{
+      font-family: fonts.$font-Poppins;
+      font-size: 15px;
+      text-align: center
+    }
+    
+    &.active{
+      @include mixins.displayFlex(column, center, center);
+    }
+  }
+
+  section{
+    @include mixins.displayFlex(column, center, center);
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    border-radius: 5px;
+    background-color: colors.$background-grey;
+    padding: 1rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.493);
+    display: none;
+    
+    &.active{
+      @include mixins.displayFlex(column, center, center);
+    }
+    
+    h2{
+      font-family: fonts.$font-Poppins;
+      font-size: 18px;
+    }
+    
+    .info-cep{
+      @include mixins.displayFlex(column, flex-start, flex-start);
+      align-self: flex-start;
+      gap: 1.5rem;
+      margin: 3rem 0;
+      
+      p{
+        font-family: fonts.$font-Poppins;
+        font-size: 15px;
+        text-transform: uppercase;
+        
+        span{
+          font-weight: 600;
+        }
+      }
+    }
+    
+    button{
+      font-family: fonts.$font-Poppins;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: .4rem 2rem;
+      border-radius: 5px;
+      border: none;
+      color: colors.$text-white;
+      font-weight: 500;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      background-color: colors.$background-orange;
+
+      &:active{
+        box-shadow: none;
+      }
+    }
+
+    .error-message{
+      @include mixins.displayFlex(column, center, center);
+      gap: 1rem;
+
+      p{
+        font-family: fonts.$font-Poppins;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
