@@ -1,6 +1,6 @@
-const cepInput = document.querySelector('#cepNumber')
-const cepForm  = document.querySelector('.container-cep')
-const loadingCep = document.querySelector('.loading-cep')
+const cepInput = document.querySelector('#cepInput')
+const cepForm  = document.querySelector('#cepForm')
+const loadingCep = document.querySelector('#loadingCep')
 const modalInfoCep = document.querySelector('#modalInfoCep')
 
 cepForm.addEventListener('submit', (e) => {
@@ -27,7 +27,15 @@ async function apiCepData(cep){
   .then(res => res.json())
   .then(data => data)
 
-  handleCepResultInfo(cepData)
+  const infoCep = {
+    cep: cepData.cep,
+    estado: cepData.uf,
+    cidade: cepData.localidade,
+    bairro: cepData.bairro,
+    rua: cepData.logradouro
+  }
+
+  RenderCepResultInfo(infoCep)
   
   if(cepData.hasOwnProperty('erro')){
     modalInfoCep.innerHTML = `
@@ -39,25 +47,12 @@ async function apiCepData(cep){
     </div>
   
     `
-    const btnInitial = document.querySelector('#btnInitial')
-  
-    btnInitial.addEventListener('click', () => {
-      modalInfoCep.classList.remove('active')
-      cepForm.classList.remove('disabled')
-    })
+
+    btnInitialCep()
   }
 }
 
-function handleCepResultInfo(cepData){
-  
-
-  const infoCep = {
-    cep: cepData.cep,
-    estado: cepData.uf,
-    cidade: cepData.localidade,
-    bairro: cepData.bairro,
-    rua: cepData.logradouro
-  }
+function RenderCepResultInfo(infoCep){
 
   const htmlStructure =  `
 
@@ -75,6 +70,10 @@ function handleCepResultInfo(cepData){
 
   modalInfoCep.innerHTML = htmlStructure
 
+  btnInitialCep()
+}
+
+function btnInitialCep(){
   const btnInitial = document.querySelector('#btnInitial')
 
   btnInitial.addEventListener('click', () => {
@@ -82,6 +81,5 @@ function handleCepResultInfo(cepData){
     cepForm.classList.remove('disabled')
   })
 }
-
 
 

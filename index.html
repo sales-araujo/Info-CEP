@@ -12,13 +12,13 @@
   </head>
   <body>
     <main>
-      <form class="container-cep">
-        <label for="cepNumber">Info<span>CEP</span></label>
-        <input type="text" id="cepNumber" required placeholder="00000-000" maxlength="8" onkeypress="$(this).mask('00000-000')"/>
+      <form class="container-cep" id="cepForm">
+        <label for="cepInput">Info<span>CEP</span></label>
+        <input type="text" id="cepInput" required placeholder="00000-000" maxlength="8" onkeypress="$(this).mask('00000-000')"/>
         <button type="submit">consultar</button>
       </form>
 
-      <div class="loading-cep">
+      <div class="loading-cep" id="loadingCep">
         <img src="/loading-cep.gif" alt="Carregando os dados do cep" />
         <p>Aguarde um momento enquanto buscamos seus dados...</p>
       </div>
